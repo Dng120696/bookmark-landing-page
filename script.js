@@ -59,10 +59,12 @@ switchbtn.forEach((item,i) =>{
     item.classList.toggle('switch-btn-clicked')
 
     const itemList = switchItem.find(items=> items.id === i);
-      titleSwitch.textContent = itemList.title;
-      imgSwitch.src = itemList.img;
-      infoSwitch.textContent = itemList.info;
-      btnInfo.textContent = itemList.btn;
+      const {title,info,btn,img} = itemList;
+      titleSwitch.textContent =title ;
+      imgSwitch.src = img ;
+      infoSwitch.textContent =info ;
+      btnInfo.textContent = btn;
+
     switchbtn.forEach(items =>{
       if(items !== item){
         items.classList.remove('switch-btn-clicked')
