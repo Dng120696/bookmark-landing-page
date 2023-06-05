@@ -273,6 +273,9 @@ article,
   width: 50%;
   transition: all 600ms;
 }
+#info{
+  padding-bottom: 0;
+}
 #info article:first-child {
   position: relative;
 }
