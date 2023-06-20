@@ -284,7 +284,7 @@ article,
 .content{
   display: none;
 }
-.active{
+.active-content{
   display: flex;
 }
 /* main sec 2 */

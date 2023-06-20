@@ -36,10 +36,10 @@ buttonEl.addEventListener('click',function(e){
   switchbtn.forEach(btn => btn.classList.remove('switch-btn-active'))
   btn.classList.add('switch-btn-active')
 
-  content.forEach(c => c.classList.remove('active'))
+  content.forEach(c => c.classList.remove('active-content'))
   console.log(btn.dataset.tab);
   console.log(document.querySelector(`content-${btn.dataset.tab}`));
-  document.querySelector(`.content-${btn.dataset.tab}`).classList.add('active')
+  document.querySelector(`.content-${btn.dataset.tab}`).classList.add('active-content')
 })
 
 
