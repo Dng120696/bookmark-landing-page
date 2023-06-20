@@ -258,21 +258,18 @@ article,
   color: var(--Soft-Red);
   transition: all 600ms;
 }
-.switch-btn-clicked::after {
+.switch-btn-active::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 3px;
-  width: 0;
+  width: 100%;
   background-color: var(--Soft-Red);
   transition: all 600ms;
 }
-.switch-btn-clicked:hover::after {
-  width: 50%;
-  transition: all 600ms;
-}
+
 #info{
   padding-bottom: 0;
 }
@@ -283,6 +280,12 @@ article,
   bottom: 0;
   right: calc(8rem - 1rem);
   border-radius: 0 15rem 15rem 0;
+}
+.content{
+  display: none;
+}
+.active{
+  display: flex;
 }
 /* main sec 2 */
 

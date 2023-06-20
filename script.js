@@ -24,56 +24,24 @@ closeMenu.addEventListener('click',toggle)
 
 
 // SWITCH SECTION
+const buttonEl = document.querySelector('.switching-button')
 const switchbtn = document.querySelectorAll('.switch-btn')
-const imgSwitch = document.querySelector('.img-switch')
-const titleSwitch = document.querySelector('.title-switch')
-const infoSwitch = document.querySelector('.info-switch')
-const btnInfo = document.querySelector('.btn-info')
-const info = document.getElementById('info')
-const switchItem = [
-  {
-    id:0,
-    title:" Bookmark in one click",
-    info:"Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
-    btn:"More Info",
-    img:'./images/illustration-features-tab-1.svg'
-},
-  {
-    id:1,
-    title:"  Intelligent search",
-    info:"Our powerful search feature will help you find saved sites in no time at all.No need to trawl through all of your bookmarks.",
-    btn:"More Info",
-    img:'./images/illustration-features-tab-2.svg'
-},
-  {
-    id:2,
-    title:"  Share your bookmarks",
-    info:"Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
-    btn:"More Info",
-    img:'./images/illustration-features-tab-3.svg'
-}
-];
+const content = document.querySelectorAll('.content')
+buttonEl.addEventListener('click',function(e){
+  // e.preventDefault()
+  const btn = e.target.closest('.switch-btn')
+ console.log(btn);
+  if(!btn)return;
 
-switchbtn.forEach((item,i) =>{
-  item.addEventListener('click',function(){
-    item.classList.toggle('switch-btn-clicked')
+  switchbtn.forEach(btn => btn.classList.remove('switch-btn-active'))
+  btn.classList.add('switch-btn-active')
 
-    const itemList = switchItem.find(items=> items.id === i);
-      const {title,info,btn,img} = itemList;
-      titleSwitch.textContent =title ;
-      imgSwitch.src = img ;
-      infoSwitch.textContent =info ;
-      btnInfo.textContent = btn;
-
-    switchbtn.forEach(items =>{
-      if(items !== item){
-        items.classList.remove('switch-btn-clicked')
-      }else{
-        items.classList.add('switch-btn-clicked')
-      }
-    })
-  })
+  content.forEach(c => c.classList.remove('active'))
+  console.log(btn.dataset.tab);
+  console.log(document.querySelector(`content-${btn.dataset.tab}`));
+  document.querySelector(`.content-${btn.dataset.tab}`).classList.add('active')
 })
+
 
 // FAQ section
 const questBoxes = document.querySelectorAll('.quest-boxes')
