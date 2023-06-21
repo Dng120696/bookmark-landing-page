@@ -30,6 +30,8 @@ html {
 }
 body {
   text-align: center;
+}
+header{
   overflow-x: hidden;
 }
 .flex {
