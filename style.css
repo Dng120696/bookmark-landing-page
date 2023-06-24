@@ -30,8 +30,8 @@ html {
 }
 body {
   text-align: center;
+  overflow-x: hidden;
 }
-
 header{
   overflow-x: hidden;
 }
@@ -119,10 +119,8 @@ p {
 .hidden {
   display: none;
 }
-nav,
 section,
-article,
-.nav-menu {
+article {
   padding: clamp(8rem, 8.5vw, 9rem) 0;
 }
 .lrg-container,
@@ -145,7 +143,9 @@ article,
 }
 
 /* nav section */
-
+.nav{
+  height: 12rem;
+}
 .nav-logo .logo {
   width: clamp(14rem, 16vw, 18rem);
 }
@@ -191,6 +191,9 @@ article,
   letter-spacing: 5px;
   font-size: clamp(1.6rem,2vw,2.2rem);
 }
+.nav-menu{
+  height: 12rem;
+}
 .nav-menu-logo {
   position: absolute;
   left: 50%;
@@ -214,6 +217,7 @@ article,
   transition: all 600ms;
 }
 /* header sec */
+
 .header-img {
   position: relative;
   z-index: 1;
@@ -462,19 +466,19 @@ section{
   transform: translateY(0);
   transition: all 1s;
 }
-
 @media (min-width: 1024px) {
+  header .lrg-container{
+    position: relative;
+  }
   .sticky{
-    height: 12rem;
     position: fixed;
-    top: 6rem;
-    left: 50%;
+    background-color: rgba(255,255,255,0.9);
     width: 100%;
-    transform: translate(-50%,-50%);
-    box-shadow: 0 0 15px rgba(0,0,0,0.45);
     z-index: 10;
-    padding: 0 clamp(10rem,10vw,15rem);
-    background-color: whitesmoke;
+    top: 0;
+    left:0;
+    padding: 0 clamp(8rem,12vw,15rem);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
   .hide {
     display: none;

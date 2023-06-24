@@ -83,6 +83,8 @@ form.addEventListener('submit', (e)=>{
 ////sticky Nav
 const header = document.querySelector('.header')
 const nav = document.querySelector('.nav')
+const navheight = nav.getBoundingClientRect()
+console.log(navheight);
 const stickyNav = (entries)=>{
 const [entry] =entries;
     if(!entry.isIntersecting){
@@ -94,8 +96,9 @@ const [entry] =entries;
 }
 const observer = new IntersectionObserver(stickyNav,{
   root:null,
-  threshold:0.1,
-  rootMargin:'-180px'
+  threshold:0,
+  rootMargin:`-${navheight.height}px`
+
 })
 observer.observe(header)
 
